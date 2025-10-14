@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct HingeApp: App {
+    @State private var coordinator = RootCoordinator()
+    
     var body: some Scene {
         WindowGroup {
-            Text("YEAH")
+            RootCoordinatorView(coordinator: coordinator)
         }
     }
 }

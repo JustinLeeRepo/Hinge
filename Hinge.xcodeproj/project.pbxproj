@@ -11,6 +11,8 @@
 		36D047562E9F079B00418C23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36D047552E9F079B00418C23 /* Assets.xcassets */; };
 		36D047592E9F079B00418C23 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36D047582E9F079B00418C23 /* Preview Assets.xcassets */; };
 		36D047602E9F12B600418C23 /* Pronoun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D0475F2E9F12B600418C23 /* Pronoun.swift */; };
+		36D047632E9F13C800418C23 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D047622E9F13C800418C23 /* RootCoordinator.swift */; };
+		36D047652E9F13D400418C23 /* RootCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D047642E9F13D400418C23 /* RootCoordinatorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		36D047552E9F079B00418C23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36D047582E9F079B00418C23 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		36D0475F2E9F12B600418C23 /* Pronoun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pronoun.swift; sourceTree = "<group>"; };
+		36D047622E9F13C800418C23 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		36D047642E9F13D400418C23 /* RootCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinatorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				36D047512E9F079800418C23 /* HingeApp.swift */,
+				36D047612E9F137300418C23 /* Root */,
 				36D0475F2E9F12B600418C23 /* Pronoun.swift */,
 				36D047552E9F079B00418C23 /* Assets.xcassets */,
 				36D047572E9F079B00418C23 /* Preview Content */,
@@ -65,6 +70,15 @@
 				36D047582E9F079B00418C23 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		36D047612E9F137300418C23 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				36D047622E9F13C800418C23 /* RootCoordinator.swift */,
+				36D047642E9F13D400418C23 /* RootCoordinatorView.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +152,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				36D047522E9F079800418C23 /* HingeApp.swift in Sources */,
+				36D047632E9F13C800418C23 /* RootCoordinator.swift in Sources */,
 				36D047602E9F12B600418C23 /* Pronoun.swift in Sources */,
+				36D047652E9F13D400418C23 /* RootCoordinatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
