@@ -13,6 +13,7 @@
 		36D047602E9F12B600418C23 /* Pronoun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D0475F2E9F12B600418C23 /* Pronoun.swift */; };
 		36D047632E9F13C800418C23 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D047622E9F13C800418C23 /* RootCoordinator.swift */; };
 		36D047652E9F13D400418C23 /* RootCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D047642E9F13D400418C23 /* RootCoordinatorView.swift */; };
+		36D0476B2E9F1FF900418C23 /* SharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = 36D0476A2E9F1FF900418C23 /* SharedUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		36D0475F2E9F12B600418C23 /* Pronoun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pronoun.swift; sourceTree = "<group>"; };
 		36D047622E9F13C800418C23 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		36D047642E9F13D400418C23 /* RootCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinatorView.swift; sourceTree = "<group>"; };
+		36D047682E9F197E00418C23 /* SharedUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SharedUI; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36D0476B2E9F1FF900418C23 /* SharedUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,8 +42,10 @@
 		36D047452E9F079800418C23 = {
 			isa = PBXGroup;
 			children = (
+				36D047682E9F197E00418C23 /* SharedUI */,
 				36D047502E9F079800418C23 /* Hinge */,
 				36D0474F2E9F079800418C23 /* Products */,
+				36D047692E9F1FF900418C23 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,6 +86,13 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		36D047692E9F1FF900418C23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -97,6 +109,9 @@
 			dependencies = (
 			);
 			name = Hinge;
+			packageProductDependencies = (
+				36D0476A2E9F1FF900418C23 /* SharedUI */,
+			);
 			productName = Hinge;
 			productReference = 36D0474E2E9F079800418C23 /* Hinge.app */;
 			productType = "com.apple.product-type.application";
@@ -360,6 +375,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		36D0476A2E9F1FF900418C23 /* SharedUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SharedUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 36D047462E9F079800418C23 /* Project object */;
 }

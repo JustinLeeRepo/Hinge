@@ -6,9 +6,10 @@
 //
 
 import Foundation
-import Combine
+import SharedUI
 
-@Observable class RootCoordinator {
+@Observable 
+class RootCoordinator {
     enum State {
         case authorized
     }
@@ -17,7 +18,9 @@ import Combine
         return .authorized
     }
     
+    let listViewModel: SelectableListViewModel
+    
     init() {
-        
+        self.listViewModel = SelectableListViewModel()
     }
 }

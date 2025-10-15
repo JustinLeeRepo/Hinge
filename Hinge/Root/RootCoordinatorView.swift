@@ -5,6 +5,7 @@
 //  Created by Justin Lee on 10/14/25.
 //
 
+import SharedUI
 import SwiftUI
 
 struct RootCoordinatorView: View {
@@ -14,7 +15,7 @@ struct RootCoordinatorView: View {
         switch coordinator.state {
             
         case .authorized:
-            Text("Yeah")
+            SelectableListView(viewModel: coordinator.listViewModel)
         }
     }
 }
