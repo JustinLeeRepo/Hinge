@@ -10,20 +10,24 @@ import Combine
 import Domain
 
 @Observable
-public class SelectableListViewModel {
+public class SelectableListViewModel<Model: SelectableModel> {
+    public typealias RowEvent = SelectableRowViewModel<Model>.RowEvent
     enum State {
-        case success([SelectableRowViewModel])
+        case success([SelectableRowViewModel<Model>])
     }
     
     var state: State {
         return .success(cellViewModels)
     }
     
-    private var cellViewModels: [SelectableRowViewModel] = []
+    private let models: [Model]
+    private var cellViewModels: [SelectableRowViewModel<Model>] = []
     private let rowEventPublisher: PassthroughSubject<RowEvent, Never>
     
-    public init() {
-        rowEventPublisher = PassthroughSubject<RowEvent, Never>()
+    public init(models: [Model], rowEventPublisher: PassthroughSubject<RowEvent, Never>) {
+        self.models = models
+        self.rowEventPublisher = rowEventPublisher
+        
         Task {
             fetchViewModels()
         }
@@ -31,8 +35,8 @@ public class SelectableListViewModel {
     
     func fetchViewModels() {
         withAnimation {
-            cellViewModels = Pronoun.testGroup1.map({ pronoun in
-                SelectableRowViewModel(model: pronoun, rowEventPublisher: rowEventPublisher)
+            cellViewModels = models.map({ model in
+                SelectableRowViewModel(model: model, rowEventPublisher: rowEventPublisher)
             })
         }
     }

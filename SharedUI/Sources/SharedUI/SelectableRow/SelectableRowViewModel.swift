@@ -9,12 +9,14 @@ import Combine
 import Domain
 import SwiftUI
 
-public enum RowEvent {
-    case selectRow(SelectableRowViewModel)
-}
 
 @Observable
-public class SelectableRowViewModel {
+public class SelectableRowViewModel<Model: SelectableModel> {
+    public enum RowEvent {
+        case selectRow(SelectableRowViewModel, () -> Void)
+        case deselectRow(SelectableRowViewModel)
+    }
+    
     enum State {
         case selected
         case unselected
@@ -32,12 +34,12 @@ public class SelectableRowViewModel {
         model.title
     }
     
-    let model: any SelectableModel
+    let model: Model
     
     private(set) var isSelected: Bool
     private var rowEventPublisher: PassthroughSubject<RowEvent, Never>
     
-    public init(model: any SelectableModel, rowEventPublisher: PassthroughSubject<RowEvent, Never>, isSelected: Bool = false) {
+    public init(model: Model, rowEventPublisher: PassthroughSubject<RowEvent, Never>, isSelected: Bool = false) {
         self.model = model
         self.isSelected = isSelected
         self.rowEventPublisher = rowEventPublisher
@@ -47,7 +49,21 @@ public class SelectableRowViewModel {
         withAnimation {
             isSelected.toggle()
         }
-        rowEventPublisher.send(.selectRow(self))
+        
+        if isSelected {
+            rowEventPublisher.send(.selectRow(self, deselctRow))
+        }
+        else {
+            rowEventPublisher.send(.deselectRow(self))
+        }
+    }
+    
+    private func deselctRow() {
+        withAnimation {
+            isSelected.toggle()
+        }
+        
+        rowEventPublisher.send(.deselectRow(self))
     }
 }
 

@@ -9,8 +9,8 @@ import SwiftUI
 import Domain
 import Combine
 
-struct SelectableRowView: View {
-    var viewModel: SelectableRowViewModel
+struct SelectableRowView<Model: SelectableModel>: View {
+    var viewModel: SelectableRowViewModel<Model>
     
     var body: some View {
         Button {
@@ -36,6 +36,6 @@ struct SelectableRowView: View {
 
 #Preview {
     let model = MockSelectableModel(id: 9, title: "YES")
-    let publisher = PassthroughSubject<RowEvent, Never>()
+    let publisher = PassthroughSubject<SelectableRowViewModel<MockSelectableModel>.RowEvent, Never>()
     return SelectableRowView(viewModel: SelectableRowViewModel(model: model, rowEventPublisher: publisher))
 }

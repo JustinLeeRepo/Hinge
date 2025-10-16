@@ -6,7 +6,8 @@
 //
 
 import Foundation
-import SharedUI
+import Domain
+import VerticalList
 
 @Observable 
 class RootCoordinator {
@@ -18,9 +19,9 @@ class RootCoordinator {
         return .authorized
     }
     
-    let listViewModel: SelectableListViewModel
+    let listViewModel: VerticalListViewModel<Pronoun>
     
     init() {
-        self.listViewModel = SelectableListViewModel()
+        self.listViewModel = VerticalListViewModel(models: Pronoun.testGroup1)
     }
 }

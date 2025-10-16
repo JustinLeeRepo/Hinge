@@ -5,12 +5,14 @@
 //  Created by Justin Lee on 10/14/25.
 //
 
+import Combine
+import Domain
 import SwiftUI
 
-public struct SelectableListView: View {
-    @Bindable var viewModel: SelectableListViewModel
+public struct SelectableListView<Model: SelectableModel>: View {
+    var viewModel: SelectableListViewModel<Model>
     
-    public init(viewModel: SelectableListViewModel) {
+    public init(viewModel: SelectableListViewModel<Model>) {
         self.viewModel = viewModel
     }
     
@@ -21,7 +23,7 @@ public struct SelectableListView: View {
         }
     }
     
-    private func generateList(viewModels: [SelectableRowViewModel]) -> some View {
+    private func generateList(viewModels: [SelectableRowViewModel<Model>]) -> some View {
         ScrollView {
             LazyVStack(spacing: 0) {
                 ForEach(viewModels) { viewModel in
@@ -37,5 +39,6 @@ public struct SelectableListView: View {
 }
 
 #Preview {
-    SelectableListView(viewModel: SelectableListViewModel())
+    let subject = PassthroughSubject<SelectableRowViewModel<MockSelectableModel>.RowEvent, Never>()
+    return SelectableListView(viewModel: SelectableListViewModel(models: MockSelectableModel.testGroup1, rowEventPublisher: subject))
 }

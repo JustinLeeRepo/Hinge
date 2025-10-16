@@ -5,8 +5,8 @@
 //  Created by Justin Lee on 10/14/25.
 //
 
-import SharedUI
 import SwiftUI
+import VerticalList
 
 struct RootCoordinatorView: View {
     var coordinator: RootCoordinator
@@ -15,7 +15,7 @@ struct RootCoordinatorView: View {
         switch coordinator.state {
             
         case .authorized:
-            SelectableListView(viewModel: coordinator.listViewModel)
+            VerticalListView(viewModel: coordinator.listViewModel)
         }
     }
 }

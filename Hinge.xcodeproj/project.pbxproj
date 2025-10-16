@@ -14,6 +14,7 @@
 		36D047652E9F13D400418C23 /* RootCoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D047642E9F13D400418C23 /* RootCoordinatorView.swift */; };
 		36D0476B2E9F1FF900418C23 /* SharedUI in Frameworks */ = {isa = PBXBuildFile; productRef = 36D0476A2E9F1FF900418C23 /* SharedUI */; };
 		36D047702EA05B4300418C23 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 36D0476F2EA05B4300418C23 /* Domain */; };
+		36D047732EA08D7400418C23 /* VerticalList in Frameworks */ = {isa = PBXBuildFile; productRef = 36D047722EA08D7400418C23 /* VerticalList */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		36D047642E9F13D400418C23 /* RootCoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinatorView.swift; sourceTree = "<group>"; };
 		36D047682E9F197E00418C23 /* SharedUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SharedUI; sourceTree = "<group>"; };
 		36D0476C2EA0599A00418C23 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Domain; sourceTree = "<group>"; };
+		36D047712EA086DD00418C23 /* VerticalList */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = VerticalList; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +35,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				36D047702EA05B4300418C23 /* Domain in Frameworks */,
+				36D047732EA08D7400418C23 /* VerticalList in Frameworks */,
 				36D0476B2E9F1FF900418C23 /* SharedUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -43,6 +46,7 @@
 		36D047452E9F079800418C23 = {
 			isa = PBXGroup;
 			children = (
+				36D047712EA086DD00418C23 /* VerticalList */,
 				36D0476C2EA0599A00418C23 /* Domain */,
 				36D047682E9F197E00418C23 /* SharedUI */,
 				36D047502E9F079800418C23 /* Hinge */,
@@ -113,6 +117,7 @@
 			packageProductDependencies = (
 				36D0476A2E9F1FF900418C23 /* SharedUI */,
 				36D0476F2EA05B4300418C23 /* Domain */,
+				36D047722EA08D7400418C23 /* VerticalList */,
 			);
 			productName = Hinge;
 			productReference = 36D0474E2E9F079800418C23 /* Hinge.app */;
@@ -385,6 +390,10 @@
 		36D0476F2EA05B4300418C23 /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Domain;
+		};
+		36D047722EA08D7400418C23 /* VerticalList */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = VerticalList;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
