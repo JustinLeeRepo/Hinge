@@ -5,21 +5,21 @@
 
 import Foundation
 
-struct Pronoun {
-    let id: Int
+public struct Pronoun: SelectableModel {
+    public let id: Int
     let isSingular: Bool
     let tense: Pronoun.Tense
-    let title: String
+    public let title: String
 }
 
 extension Pronoun: Equatable {
-    static func ==(lhs: Pronoun, rhs: Pronoun) -> Bool {
+    public static func ==(lhs: Pronoun, rhs: Pronoun) -> Bool {
         return lhs.id == rhs.id
     }
 }
 
 extension Pronoun {
-    enum Tense {
+    public enum Tense: Codable {
         case subject
         case object
         case possessiveAdjective
@@ -29,7 +29,7 @@ extension Pronoun {
 }
 
 extension Pronoun {
-    static var testGroup1: [Pronoun] {
+    public static var testGroup1: [Pronoun] {
         [
             Pronoun(id: 0, isSingular: true, tense: .subject, title: "He"),
             Pronoun(id: 1, isSingular: true, tense: .subject, title: "She"),
@@ -49,7 +49,7 @@ extension Pronoun {
         ]
     }
     
-    static var testGroup2: [Pronoun] {
+    public static var testGroup2: [Pronoun] {
         [
             Pronoun(id: 0, isSingular: true, tense: .subject, title: "He"),
             Pronoun(id: 1, isSingular: true, tense: .subject, title: "She"),

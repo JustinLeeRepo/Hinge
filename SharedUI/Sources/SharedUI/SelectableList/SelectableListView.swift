@@ -16,26 +16,21 @@ public struct SelectableListView: View {
     
     public var body: some View {
         switch viewModel.state {
-        case let .success(titles):
-            generateList(titles: titles)
+        case let .success(rowViewModels):
+            generateList(viewModels: rowViewModels)
         }
     }
     
-    private func generateList(titles: [String]) -> some View {
+    private func generateList(viewModels: [SelectableRowViewModel]) -> some View {
         ScrollView {
-            LazyVStack {
-                ForEach(titles, id: \.self) { title in
-                    Button {
-                        print("YEAH")
-//                        viewModel.selectCell()
-                    } label: {
-                        HStack {
-                            Text(title)
-                            Spacer()
-                            Text("Circle w state")
-                        }
-                    }
+            LazyVStack(spacing: 0) {
+                ForEach(viewModels) { viewModel in
+                    SelectableRowView(viewModel: viewModel)
+                    
+                    Divider()
+                        .padding(.horizontal)
                 }
+                .padding(.horizontal)
             }
         }
     }
